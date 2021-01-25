@@ -218,3 +218,17 @@ Extra (xl) large devices (large desktops, 1200px and up)
   transform: translateZ(0);
   will-change: transform;
 }
+.background1{
+  background-image: url(../img/background-photo.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #f0c2c2; 
+}
+
+@media only screen and (max-width: 767px) {
+  .background1{
+    background-image: url(../img/background-photo-mobile-devices.jpg);
+  }
+ 
