@@ -7,7 +7,7 @@ function post_handle($username, $pass){
     echo "Post request has been sent" . "<br>";
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+if (isset($_POST['submit'])){
     $username = $_POST['username'];
     $pass = $_POST['pass'];
 
