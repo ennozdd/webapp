@@ -9,7 +9,8 @@ function post_handle($username, $pass){
 
 if (isset($_POST['submit'])){
     $username = $_POST['username'];
-    $pass = $_POST['pass'];
+    $pass = password_hash($_POST['pass'],  PASSWORD_DEFAULT); 
+
 
     post_handle($username, $pass);
     exit(0);
