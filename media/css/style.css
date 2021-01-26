@@ -1,4 +1,5 @@
 /*-- Body Reset --*/
+
 body {
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif;
@@ -110,7 +111,7 @@ text-shadow:.1rem .1rem .3rem rgba(0,0, 0, 0.1);
 
 /*============= FOOTER =============*/
 footer{
-  background-color:#272a2c ;
+  background-color:#080808 ;
   padding: 1rem 2rem 3rem;
 }
 
@@ -224,11 +225,28 @@ Extra (xl) large devices (large desktops, 1200px and up)
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #f0c2c2; 
+  background-color: #000000;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  padding: 15rem;
 }
 
 @media only screen and (max-width: 767px) {
   .background1{
     background-image: url(../img/background-photo-mobile-devices.jpg);
+  }
+ 
+  .background2{
+    background-image: url(../img/signup.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color:black;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    padding-bottom: 20rem;
   }
  
