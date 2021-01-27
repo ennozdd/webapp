@@ -18,6 +18,7 @@ function start_includes(){
         include_once("templates/navbar-nav.inc.php");
         include_once("templates/login.inc.php");
         echo "<br> New to " . $_SERVER['SERVER_NAME'] . "? <a href='/signup.php'>SIGN UP</a>";
+        include_once("templates/footer.inc.php");
 }
 
 

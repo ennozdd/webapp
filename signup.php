@@ -4,6 +4,16 @@ include_once("templates/topbar.inc.php");
 include_once("templates/navbar-nav.inc.php");
 #include_once("templates/footer.inc.php");
 
+function check_valid_username($username){
+    if(!preg_match('/^[a-zA-Z0-9\-_]+$/', $username)){
+        include("templates/signup.inc.php");
+        echo "<br>Username can only contain letters, numbers, dashes and underscores.<br>";
+        return False;
+    } else{
+        return True;
+    }
+
+}
 
 function test_input($data){
     $data = trim($data);
@@ -33,17 +43,21 @@ function check_arguments(){
 }
 
 function post_handle($username, $pass, $email, $dbc){
+    if(!check_valid_username($username)){
+        return;
+    }
     if(check_exist($username, $dbc)){
         include_once("templates/signup.inc.php");
         echo "<br> Username exists. <br>";
-        return False;
+        return;
     }
     $pass = password_hash($pass,  PASSWORD_DEFAULT);
     $query = "INSERT INTO user (username, password, email) VALUES(?, ?, ?)";
     $stmt = mysqli_prepare($dbc, $query);
     mysqli_stmt_bind_param($stmt, 'sss', $username, $pass, $email);
     mysqli_stmt_execute($stmt);
-    echo "Post request has been sent" . "<br>";
+    echo "<br>Post request has been sent<br>";
+    echo "<br><a> Click </a><a href='/login.php'>here</a><a> to log in</a>";
 }
 
 function check_exist($username, $dbc){
