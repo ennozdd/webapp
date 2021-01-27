@@ -12,7 +12,7 @@ function test_input($data){
     return $data;
 }
 
-function check_arguments(){
+function check_email(){
     $email = test_input($_POST['email']);
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
         $emailERR="Invalid email format";
@@ -20,6 +20,11 @@ function check_arguments(){
         echo $emailERR;
         exit(0);
     }
+
+}
+
+function check_arguments(){
+    check_email();
     if( empty($_POST['username']) || empty($_POST['pass']) || empty($_POST['email'])){
         include("templates/signup.inc.php");
         echo "<br>Username, password or email is missing<br>";
@@ -42,10 +47,15 @@ function post_handle($username, $pass, $email, $dbc){
 }
 
 function check_exist($username, $dbc){
-    #echo "<br>" . var_dump($dbc) . "<br>";
-    $username= mysqli_real_escape_string($dbc, $username);
-    $query= "SELECT EXISTS(SELECT * FROM user WHERE username='". $username. "')";
-    return mysqli_query($dbc, $query);
+    $query= "SELECT username FROM user WHERE username=?";
+
+    $stmt = mysqli_prepare($dbc, $query);
+    mysqli_stmt_bind_param($stmt, 's', $username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $result);
+    mysqli_stmt_fetch($stmt);
+    
+    return $result ;
 }
 
 if (isset($_POST['submit'])){
