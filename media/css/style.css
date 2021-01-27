@@ -52,7 +52,7 @@ body {
     box-shadow: 0 1rem 1rem rgba(0,0, 0, 0.1);
   }
   .carousel-inner{
-    max-height:38rem !important ;
+    max-height:60rem !important ;
   }
 
 /*---Change Carousel Transition Speed --*/
@@ -65,7 +65,7 @@ body {
   .carousel-caption{
     position: absolute;
     top: 50%;
-    transform:translateY(-40%) ;
+    transform:translateY(-20%) ;
   }
 
 .bg-custom{
@@ -113,13 +113,8 @@ text-shadow:.1rem .1rem .3rem rgba(0,0, 0, 0.1);
 footer{
   background-color:#080808 ;
   padding: 1rem 2rem 3rem;
+  
 }
-
-footer img{
-  height: 10rem;
-  margin: 1.5rem auto;
-}
-
 
 footer p, footer a,.socket a{
   color: white;
@@ -150,7 +145,6 @@ footer .fab{
   background-color: #222222;
   border-top:solid 1rem #7aaec4;
   
-
 }
 
 
@@ -219,34 +213,12 @@ Extra (xl) large devices (large desktops, 1200px and up)
   transform: translateZ(0);
   will-change: transform;
 }
-.background1{
-  background-image: url(../img/background-photo.jpg);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #000000;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  padding: 15rem;
-}
 
 @media only screen and (max-width: 767px) {
   .background1{
     background-image: url(../img/background-photo-mobile-devices.jpg);
   }
  
-  .background2{
-    background-image: url(../img/signup.jpg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-color:black;
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    padding-bottom: 20rem;
-  }
- 
+html body .background1{
+  background-color: deeppink !important;
+}

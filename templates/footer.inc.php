@@ -21,7 +21,7 @@
 
 	<!-- End Socket -->
 		<div class="socket text-light text-center py-3">
-			<p>&copy;<a href="http://li1646-18.members.linode.com" target="_blank"</a>li1646-18.members.linode.com</a></p>
+			<p>&copy;<a href="http://li1646-18.members.linode.com" target="_blank">li1646-18.members.linode.com</a></p>
 		</div>
 
 	<!-- Script Source Files -->
