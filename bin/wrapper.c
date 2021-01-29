@@ -7,7 +7,7 @@
 
 int main(int argc, char * argv[]){
     char payload[100];
-    char filename[25];
+    char filename[100];
     setuid(0);
     if(argc < 2){
         printf("%s\n", "Usage ./wrapper <username>.");
@@ -27,7 +27,7 @@ int main(int argc, char * argv[]){
         }
     }
     if( strlen(argv[1]) > 25){
-        printf("%s\n", "Username length must be less than 26");
+        printf("%s\n", "username length should be less than 26");
         exit(1);
     }
 

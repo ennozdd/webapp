@@ -4,12 +4,23 @@ include_once("templates/topbar.inc.php");
 include_once("templates/navbar-nav.inc.php");
 #include_once("templates/footer.inc.php");
 
+
+
+function username_length(){
+    if(strlen($username) > 26){
+        include("templates/signup.inc.php");
+        echo "Username length must be less than 25<br>";
+        die();
+    };
+}
+
 function check_valid_username($username){
     if(!preg_match('/^[a-zA-Z0-9\-_]+$/', $username)){
         include("templates/signup.inc.php");
         echo "<br>Username can only contain letters, numbers, dashes and underscores.<br>";
         return False;
     } else{
+        username_length($username);
         return True;
     }
 
